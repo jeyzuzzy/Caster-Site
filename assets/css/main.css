@@ -1,0 +1,111 @@
+/* 
+	Background
+*/
+body {
+	background-color: #f4f4f4;
+	line-height: 1.6;
+	background-image: 
+		radial-gradient(circle at center, rgba(0,0,0,0) 20%, rgba(0,0,0,0.9) 80%),
+        url("../images/background.png");
+	background-repeat: no-repeat, no-repeat;
+	background-position: center center, center center;
+	background-size: cover, cover;
+	background-attachment: fixed;
+}
+
+/*
+	Formatting
+*/
+body {
+	overflow-y: scroll;
+	margin: 0;
+	padding-top: 5vh;
+}
+
+/*
+	Banner
+*/
+header {
+	display: block;
+	position: relative;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+header img {
+	width: 300px;
+}
+
+header nav {
+	position: absolute;
+	bottom: 15px;
+	right: 10px;
+	font-family: "UnifrakturCook", serif;
+	font-size: 16px;
+	gap: 5px;
+	display: flex;
+}
+
+header nav a, footer nav a {
+    text-decoration: none;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0px 5px;
+    border-radius: 30px;
+    backdrop-filter: blur(2px);
+}
+
+header nav a:hover, footer nav a:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+
+footer nav {
+	display: block;
+	position: relative;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+main {
+	/* Glass Effect */
+    background-color: rgba(255, 255, 255, 0.6); /* White with 75% opacity */
+    backdrop-filter: blur(6px);               /* Blurs the background image */
+    border: 3px solid rgba(0, 0, 0, 0.8); /* Subtle "edge" to the glass */
+    
+    /* Shape & Spacing */
+    border-radius: 30px; 
+    margin: 20px auto;        /* Centers the box and adds space at top/bottom */
+    padding: 40px;            /* Keeps text away from the rounded edges */
+    
+    /* Sizing */
+    width: 300px;         /* Fixed maximum width so it doesn't get too wide */
+    min-height: 20px;
+    
+    /* Text */
+    color: #000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+@media (min-width: 1000px) {
+	
+    header img {
+        width: 1000px;
+    }
+	
+	header nav {
+		font-size: 42px;
+		gap: 20px;
+		bottom: 40px;
+		right: 60px;
+	}
+	
+	header nav a {
+		padding: 0px 20px;
+	}
+	
+	main {
+		width: 1000px;
+	}
+	
+}
