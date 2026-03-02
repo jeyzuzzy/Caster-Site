@@ -19,7 +19,7 @@ body {
 body {
 	overflow-y: scroll;
 	margin: 0;
-	padding-top: 5vh;
+	padding-top: 2vh;
 }
 
 /*
@@ -33,7 +33,11 @@ header {
 }
 
 header img {
-	width: 300px;
+	width: 500px;
+}
+
+header img:hover {
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 }
 
 header nav {
@@ -41,50 +45,82 @@ header nav {
 	bottom: 15px;
 	right: 10px;
 	font-family: "UnifrakturCook", serif;
-	font-size: 16px;
+	font-size: 24px;
 	gap: 5px;
 	display: flex;
 }
 
-header nav a, footer nav a {
-    text-decoration: none;
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 0px 5px;
-    border-radius: 30px;
-    backdrop-filter: blur(2px);
+header nav a {
+	width: 80px;
+	height: 30px;
 }
 
-header nav a:hover, footer nav a:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
+footer {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+	font-family: "UnifrakturCook", serif;
 }
 
 footer nav {
-	display: block;
-	position: relative;
-	width: fit-content;
-	margin: 0 auto;
+	display: flex;
+	gap: 3px;
+}
+
+footer nav a {
+	width: 100px;
+	height: 30px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/stone.png');
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 100% 100%;
+	padding: 6px 16px 10px 6px;
+	text-decoration: none;
+	color: #000;
+}
+
+.button img {
+	height: 100%;
+	object-fit: cover;
+	padding: 5px;
+}
+
+.button:hover{
+	font-size: 1.1em;
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 }
 
 main {
-	/* Glass Effect */
-    background-color: rgba(255, 255, 255, 0.6); /* White with 75% opacity */
-    backdrop-filter: blur(6px);               /* Blurs the background image */
-    border: 3px solid rgba(0, 0, 0, 0.8); /* Subtle "edge" to the glass */
-    
-    /* Shape & Spacing */
+	box-sizing: border-box;
+    background-image: url('../images/paper.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     border-radius: 30px; 
-    margin: 20px auto;        /* Centers the box and adds space at top/bottom */
-    padding: 40px;            /* Keeps text away from the rounded edges */
-    
-    /* Sizing */
-    width: 300px;         /* Fixed maximum width so it doesn't get too wide */
+    margin: 20px auto 0px auto;
+    padding: 60px;
+    width: 500px;
     min-height: 20px;
-    
-    /* Text */
     color: #000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.gallery {
+    display: grid;
+	padding: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 @media (min-width: 1000px) {
@@ -102,10 +138,30 @@ main {
 	
 	header nav a {
 		padding: 0px 20px;
+		width: 180px;
+		height: 70px;
+	}
+	
+	footer nav {
+		font-size: 24px;
+	}
+	
+	footer nav a {
+		padding: 16px 16px 20px 12px;
+		width: 150px;
+		height: 40px;
+	}
+	
+	.footer-button {
+		padding: 16px 16px 20px 12px;
 	}
 	
 	main {
 		width: 1000px;
+		padding: 100px;
 	}
 	
+	.gallery {
+		padding: 50px;
+	}
 }
