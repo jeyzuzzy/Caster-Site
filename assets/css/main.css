@@ -17,9 +17,16 @@ body {
 	Formatting
 */
 body {
-	overflow-y: scroll;
-	margin: 0;
-	padding-top: 2vh;
+    display: flex;
+    flex-direction: column;       /* stack content vertically */
+    justify-content: center;      /* vertical centering */
+    align-items: center;          /* horizontal centering */
+    min-height: 100vh;            /* make sure body takes full viewport */
+    padding-top: 3vh;            /* at least 10% padding on top */
+    padding-bottom: 3vh;         /* at least 10% padding on bottom */
+    margin: 0;
+    overflow-y: auto;             /* allow scrolling if content exceeds viewport */
+    box-sizing: border-box;       /* include padding in height calculation */
 }
 
 /*
@@ -33,7 +40,7 @@ header {
 }
 
 header img {
-	width: 500px;
+	width: 650px;
 }
 
 header img:hover {
@@ -42,17 +49,24 @@ header img:hover {
 
 header nav {
 	position: absolute;
-	bottom: 15px;
+	bottom: 5px;
 	right: 10px;
 	font-family: "UnifrakturCook", serif;
-	font-size: 24px;
-	gap: 5px;
+	font-size: 32px;
+	gap: 2px;
 	display: flex;
+	text-shadow:
+  1px 2px 0 black,
+  -1px 2px 0 black,
+  1px -2px 0 black,
+  -1px -2px 0 black,
+  0 0 6px rgba(127, 214, 212, 0.3);
+	
 }
 
 header nav a {
-	width: 80px;
-	height: 30px;
+	width: 145px;
+	height: 50px;
 }
 
 footer {
@@ -82,7 +96,7 @@ footer nav a {
 	background-size: 100% 100%;
 	padding: 6px 16px 10px 6px;
 	text-decoration: none;
-	color: #000;
+	color: #7FD6D4;
 }
 
 .button img {
@@ -96,22 +110,50 @@ footer nav a {
 	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
 }
 
+.socials {
+	display: grid;
+	grid-template-columns: repeat(3, 180px);
+	grid-auto-rows: 60px;
+	gap: 5px;
+}
+
+.social {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	text-decoration: none;
+	color: black;
+	font-size: 24px;
+	width: 140px;
+}
+
+.social img {
+	height: 100%;
+	object-fit: cover;
+	padding: 5px;
+}
+
+.social:hover{
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
+
 main {
 	box-sizing: border-box;
     background-image: url('../images/paper.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border-radius: 30px; 
-    margin: 20px auto 0px auto;
-    padding: 60px;
-    width: 500px;
+    margin: 10px auto 0px auto;
+    padding: 60px 80px 0px 80px;
+    width: 700px;
     min-height: 20px;
     color: #000;
 }
 
 .gallery {
     display: grid;
-	padding: 10px;
+	padding: 30px 0px 5px 0px;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
@@ -121,6 +163,7 @@ main {
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
 }
 
 @media (min-width: 1000px) {
@@ -130,25 +173,26 @@ main {
     }
 	
 	header nav {
-		font-size: 42px;
-		gap: 20px;
-		bottom: 40px;
-		right: 60px;
+		font-size: 48px;
+		gap: 10px;
+		bottom: 30px;
+		right: 30px;
 	}
 	
 	header nav a {
 		padding: 0px 20px;
-		width: 180px;
-		height: 70px;
+		width: 220px;
+		height: 75px;
 	}
 	
-	footer nav {
-		font-size: 24px;
+	.socials {
+		gap: 20px;
+		grid-template-columns: repeat(3, 240px);
 	}
 	
-	footer nav a {
-		padding: 16px 16px 20px 12px;
-		width: 150px;
+	.social {
+		font-size: 36px;
+		width: 170px;
 		height: 40px;
 	}
 	
@@ -158,10 +202,10 @@ main {
 	
 	main {
 		width: 1000px;
-		padding: 100px;
+		padding: 60px 120px 40px 120px;
 	}
 	
 	.gallery {
-		padding: 50px;
+		padding: 60px 0px 20px 0px;
 	}
 }
