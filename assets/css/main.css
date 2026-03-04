@@ -11,6 +11,7 @@ body {
 	background-position: center center, center center;
 	background-size: cover, cover;
 	background-attachment: fixed;
+	font-family: 'Inter', sans-serif;
 }
 
 /*
@@ -149,6 +150,34 @@ main {
     width: 700px;
     min-height: 20px;
     color: #000;
+	font-size: 18px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  gap: 0px 50px;
+}
+
+.menu-item h1 {
+	font-family: "UnifrakturCook", serif;
+	text-decoration: underline;
+	margin: 20px 0 0 0;
+}
+
+.menu-item p {
+	margin: 0;
 }
 
 .gallery {
@@ -203,6 +232,7 @@ main {
 	main {
 		width: 1000px;
 		padding: 60px 120px 40px 120px;
+		font-size: 26px;
 	}
 	
 	.gallery {
