@@ -195,6 +195,35 @@ main {
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
 }
 
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.card {
+  background-image: url('../images/card.png');
+  background-size: 100% 100%;
+  width: 250px;
+  height: 363px;
+  flex-shrink: 0;
+}
+
+.intro-text {
+  line-height: 1.7;
+  padding: 20px 20px;
+
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 0 15px rgba(120, 90, 255, 0.25),
+    inset 0 0 10px rgba(0,0,0,0.6);
+
+
+  text-shadow: 0 0 6px rgba(140,110,255,0.35);
+}
+
 @media (min-width: 1000px) {
 	
     header img {
@@ -237,5 +266,10 @@ main {
 	
 	.gallery {
 		padding: 60px 0px 20px 0px;
+	}
+	
+	.card {
+		width: 350px;
+		height: 508px;
 	}
 }
